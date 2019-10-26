@@ -36,8 +36,6 @@ const MOVIE_DATA = [
 
 export const getMovies = () => {
   return new Promise((res, rej) => {
-    setTimeout(() => {
-      return res(MOVIE_DATA);
-    }, 2000);
+    res(MOVIE_DATA);
   });
 };

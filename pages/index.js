@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import Head from "next/head";
 import Navbar from "../components/navbar";
 import SideMenu from "../components/sideMenu";
@@ -7,16 +7,10 @@ import MovieList from "../components/movieList";
 import Footer from "../components/footer";
 import { getMovies } from "../actions";
 
-const Home = () => {
-  const [movies, setMovies] = useState([]);
-
-  getMovies().then(movies => {
-    setMovies(movies);
-  });
+const Home = props => {
   return (
     <div>
       <Head>
-        <title>Home</title>
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -49,7 +43,7 @@ const Home = () => {
             <div className="col-lg-9">
               <Carousel />
               <div className="row">
-                <MovieList movies={movies} />
+                <MovieList movies={props.movies} />
               </div>
             </div>
           </div>
@@ -67,4 +61,10 @@ const Home = () => {
   );
 };
 
+Home.getInitialProps = async () => {
+  const movies = await getMovies();
+  return {
+    movies
+  };
+};
 export default Home;

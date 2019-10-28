@@ -3,10 +3,11 @@ import App from "next/app";
 import Head from "next/head";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+
 class MovieApp extends App {
   static async getInitialProps(appContext) {
     const appProps = await App.getInitialProps(appContext);
-    console.log(`Callling from Movieapp: ${appProps}`);
+
     return { ...appProps };
   }
   render() {

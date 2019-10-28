@@ -31,7 +31,7 @@ const Home = props => {
 
 Home.getInitialProps = async () => {
   const movies = await getMovies();
-  console.log(`Callling from index.js`);
+
   return {
     movies
   };

@@ -4,7 +4,7 @@ const Movie = props => {
   const router = useRouter();
   const { id } = router.query;
   const { movie } = props;
-  console.log(movie);
+
   return (
     <div className="container">
       <div className="jumbotron">
@@ -23,13 +23,14 @@ const Movie = props => {
             Learn more
           </a>
         </p>
+        <p>{movie.longDesc}</p>
       </div>
       <p>Description</p>
     </div>
   );
 };
-Movie.getInitialProps = async () => {
-  const movie = await getMovieById("2");
+Movie.getInitialProps = async ({ query }) => {
+  const movie = await getMovieById(query.id);
 
   return { movie };
 };

@@ -46,7 +46,7 @@ class MovieApp extends App {
         <style jsx>
           {`
             .home-page {
-              padding-top: 80px;
+              padding-top: 100px;
             }
           `}
         </style>

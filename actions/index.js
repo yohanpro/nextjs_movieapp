@@ -10,7 +10,9 @@ const MOVIE_DATA = [
     rating: 4.8,
     genre: "drama",
     image:
-      "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg"
+      "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
+    cover:
+      "https://cdn.pixabay.com/photo/2017/08/06/18/05/pumpkin-2594747_1280.jpg"
   },
   {
     id: "2",
@@ -23,7 +25,9 @@ const MOVIE_DATA = [
     rating: 4.7,
     genre: "action, crime, drama",
     image:
-      "https://img.cinemablend.com/filter:scale/quill/c/3/8/0/f/4/c380f4f12cfeec19f0c40c6f57db188f2f98cca8.jpg?mw=600"
+      "https://img.cinemablend.com/filter:scale/quill/c/3/8/0/f/4/c380f4f12cfeec19f0c40c6f57db188f2f98cca8.jpg?mw=600",
+    cover:
+      "https://cdn.pixabay.com/photo/2016/05/21/21/33/batman-1407484_1280.jpg"
   },
   {
     id: "3",
@@ -36,7 +40,9 @@ const MOVIE_DATA = [
     rating: 4.9,
     genre: "adventure, drama, fantasy",
     image:
-      "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=600"
+      "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=600",
+    cover:
+      "https://cdn.pixabay.com/photo/2016/09/24/22/26/ring-1692713_1280.jpg"
   }
 ];
 

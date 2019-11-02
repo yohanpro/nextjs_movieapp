@@ -45,7 +45,18 @@ const MOVIE_DATA = [
       "https://cdn.pixabay.com/photo/2016/09/24/22/26/ring-1692713_1280.jpg"
   }
 ];
+const CATEGORY_DATA = [
+  { id: "1", name: "drama" },
+  { id: "2", name: "action" },
+  { id: "3", name: "adventure" },
+  { id: "4", name: "historical" }
+];
 
+export const getCategories = () => {
+  return new Promise((res, rej) => {
+    res(CATEGORY_DATA);
+  });
+};
 export const getMovies = () => {
   return new Promise((res, rej) => {
     res(MOVIE_DATA);

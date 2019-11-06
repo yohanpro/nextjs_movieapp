@@ -1,7 +1,10 @@
-const Modal = () => {
+import MovieCreateForm from "./movieCreateForm";
+
+const Modal = props => {
   let closeBtn = null;
   const submitModal = () => {
     alert("Submitting Modal");
+
     closeBtn.click();
   };
   return (
@@ -38,7 +41,7 @@ const Modal = () => {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">{props.children}</div>
             <div className="modal-footer">
               <button
                 type="button"

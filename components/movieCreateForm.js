@@ -1,8 +1,12 @@
 import { useState } from "react";
-const MovieCreateForm = () => {
+const MovieCreateForm = props => {
   const [form, setForm] = useState({
-    name: "john",
-    description: "hihi"
+    name: "",
+    description: "",
+    rating: "",
+    image: "",
+    cover: "",
+    longDesc: ""
   });
   const handleChange = e => {
     const target = e.target;
@@ -12,11 +16,27 @@ const MovieCreateForm = () => {
       [name]: target.value
     });
   };
+  const handleGenreChange = e => {
+    const { options } = e.target;
+    const optionsLength = options.length;
+    let value = [];
+    for (let i = 0; i < optionsLength; i++) {
+      if (options[i].selected) {
+        value.push(options[i].value);
+      }
+    }
+    setForm({
+      ...form,
+      genre: value.toString()
+    });
+  };
+  const submitForm = () => {
+    props.handleFormSubmit({ ...form });
+  };
   return (
     <form>
-      {JSON.stringify(form)}
       <div className="form-group">
-        <label for="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input
           value={form.name}
           onChange={handleChange}
@@ -29,7 +49,7 @@ const MovieCreateForm = () => {
         />
       </div>
       <div className="form-group">
-        <label for="description">Description</label>
+        <label htmlFor="description">Description</label>
         <input
           value={form.description}
           onChange={handleChange}
@@ -41,7 +61,7 @@ const MovieCreateForm = () => {
         />
       </div>
       <div className="form-group">
-        <label for="description">Rating</label>
+        <label htmlFor="description">Rating</label>
         <input
           value={form.rating}
           onChange={handleChange}
@@ -58,7 +78,7 @@ const MovieCreateForm = () => {
         </small>
       </div>
       <div className="form-group">
-        <label for="image">Image</label>
+        <label htmlFor="image">Image</label>
         <input
           value={form.image}
           onChange={handleChange}
@@ -70,7 +90,7 @@ const MovieCreateForm = () => {
         />
       </div>
       <div className="form-group">
-        <label for="cover">Cover</label>
+        <label htmlFor="cover">Cover</label>
         <input
           value={form.cover}
           onChange={handleChange}
@@ -82,7 +102,7 @@ const MovieCreateForm = () => {
         />
       </div>
       <div className="form-group">
-        <label for="longDesc">Long Description</label>
+        <label htmlFor="longDesc">Long Description</label>
         <textarea
           value={form.longDesc}
           onChange={handleChange}
@@ -93,8 +113,13 @@ const MovieCreateForm = () => {
         ></textarea>
       </div>
       <div className="form-group">
-        <label for="genre">Genre</label>
-        <select multiple className="form-control" id="genre">
+        <label htmlFor="genre">Genre</label>
+        <select
+          onChange={handleGenreChange}
+          multiple
+          className="form-control"
+          id="genre"
+        >
           <option>drama</option>
           <option>music</option>
           <option>adventure</option>
@@ -102,6 +127,9 @@ const MovieCreateForm = () => {
           <option>action</option>
         </select>
       </div>
+      <button type="button" className="btn btn-primary" onClick={submitForm}>
+        Create
+      </button>
     </form>
   );
 };

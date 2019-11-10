@@ -62,6 +62,12 @@ export const getMovies = () => {
     res(MOVIE_DATA);
   });
 };
+export const createMovies = movie => {
+  return new Promise((res, rej) => {
+    MOVIE_DATA.push(movie);
+    res(MOVIE_DATA);
+  });
+};
 
 export const getMovieById = id => {
   return new Promise((res, rej) => {

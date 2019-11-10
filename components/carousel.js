@@ -21,7 +21,10 @@ const Carousel = props => {
       </ol>
       <div className="carousel-inner" role="listbox">
         {images.map((image, index) => (
-          <div className={`carousel-item ${index === 0 ? "active" : ""}`}>
+          <div
+            key={image.id}
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+          >
             <img
               key={image.id}
               className="d-block img-fluid"

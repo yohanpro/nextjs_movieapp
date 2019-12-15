@@ -1,0 +1,18 @@
+{
+    "html.suggest.html5": true,
+    "npm-intellisense.scanDevDependencies": false,
+    "javascript.validate.enable": false,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.jsxBracketSameLine": true,
+    "prettier.parser": "flow",
+    "workbench.colorTheme": "Material Theme Palenight",
+    "eslint.autoFixOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+}

@@ -9,7 +9,8 @@
     "workbench.colorTheme": "Material Theme Palenight",
     "eslint.autoFixOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.tslint": true
+        "source.fixAll.tslint": true,
+        "source.fixAll.eslint": true
     },
     "[javascript]": {
         "editor.formatOnSave": true,

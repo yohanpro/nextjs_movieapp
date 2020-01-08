@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Router, { withRouter } from 'next/router';
+import Router from 'next/router';
 import MovieCreateform from '../../../components/movieCreateForm';
-import { getMovieById, createMovie } from '../../../actions';
+import { getMovieById, updateMovie } from '../../../actions';
 
 
 class EditMovie extends Component {
@@ -11,14 +11,9 @@ class EditMovie extends Component {
         const myRouter = router;
         return { movie, myRouter };
     }
-    handleCreateMovie(movie) {
-
-        createMovie(movie).then((movies) => {
-
-            Router.push({
-                pathname: '/',
-                // query: { name: 'Someone' }
-            });
+    handleUpdateMovie(movie) {
+        updateMovie(movie).then(updateMovie => {
+            Router.push(`/movies/${movie.id}`);
         });
     };
     render() {
@@ -26,10 +21,13 @@ class EditMovie extends Component {
         return (
             <div className="container">
                 <h1>Edit the movie</h1>
-                <MovieCreateform handleFormSubmit={this.handleCreateMovie} initialData={movie} />
+                <MovieCreateform
+                    handleFormSubmit={this.handleUpdateMovie}
+                    submitButton="UPDATE"
+                    initialData={movie} />
             </div>
         );
     }
 }
 
-export default withRouter(EditMovie);
+export default EditMovie;

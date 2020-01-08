@@ -42,7 +42,6 @@ app.prepare().then(() => {
     });
 
 
-
     server.delete('/api/v1/movies/:id', (req, res) => {
         const {
             id
@@ -61,6 +60,23 @@ app.prepare().then(() => {
         return res.json({
             message: `Deleting post of id: ${id}`
         });
+    });
+    server.patch('/api/v1/movies/:id', (req, res) => {
+        const {
+            id
+        } = req.params;
+        const movie = req.body;
+        const movieIndex = moviesData.findIndex(m => m.id === id);
+
+        moviesData[movieIndex] = movie;
+
+        const pathToFile = path.join(__dirname, filePath);
+        const stringifiedData = JSON.stringify(moviesData, null, 2);
+        fs.writeFile(pathToFile, stringifiedData, err => {
+            if (err) res.status(422).send(err);
+        });
+
+        return res.json(movie);
     });
 
     // we are handling all of the request comming to our server

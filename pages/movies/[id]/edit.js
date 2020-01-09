@@ -13,7 +13,7 @@ class EditMovie extends Component {
     }
     handleUpdateMovie(movie) {
         updateMovie(movie).then(updateMovie => {
-            Router.push(`/movies/${movie.id}`);
+            Router.push('/movies/[id]', `/movies/${movie.id}`);
         });
     };
     render() {

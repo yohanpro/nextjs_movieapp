@@ -14,7 +14,7 @@ const CATEGORY_DATA = [{
 },
 {
   id: 'c-3',
-  name: 'adventeru'
+  name: 'adventure '
 },
 {
   id: 'c-4',

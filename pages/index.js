@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useState } from 'react';
 import SideMenu from "../components/sideMenu";
 import Carousel from "../components/carousel";
 import MovieList from "../components/movieList";
@@ -8,6 +8,11 @@ import { getMovies, getCategories } from "../actions";
 
 const Home = props => {
   const { images, categories } = props;
+  const [filter, setFilter] = useState('');
+
+  const changeCategory = category => {
+    setFilter(category);
+  };
 
   return (
     <div>
@@ -15,10 +20,15 @@ const Home = props => {
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
-              <SideMenu categories={categories} />
+              <SideMenu
+                categories={categories}
+                activeCategory={filter}
+                changeCategory={changeCategory} />
             </div>
             <div className="col-lg-9">
+
               <Carousel images={images} />
+              <h1>Display Movie {filter} </h1>
               <div className="row">
                 <MovieList movies={props.movies || []} />
               </div>

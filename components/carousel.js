@@ -2,7 +2,6 @@ import React from "react";
 
 const Carousel = props => {
   const { images } = props;
-  console.log(images);
   return (
     <div
       id="carouselExampleIndicators"
@@ -24,7 +23,7 @@ const Carousel = props => {
           <div
             key={image.id}
             className={`carousel-item ${index === 0 ? "active" : ""}`}
-        >
+          >
             <img
               key={image.id}
               className="d-block img-fluid"
@@ -35,7 +34,7 @@ const Carousel = props => {
         ))}
       </div>
       <a
-      className="carousel-control-prev"
+        className="carousel-control-prev"
         href="#carouselExampleIndicators"
         role="button"
         data-slide="prev"

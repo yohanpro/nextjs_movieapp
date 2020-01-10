@@ -32,7 +32,6 @@ app.prepare().then(() => {
         moviesData.push(movie);
         const pathToFile = path.join(__dirname, filePath);
         const stringifiedData = JSON.stringify(moviesData, null, 2);
-
         fs.writeFile(pathToFile, stringifiedData, (err) => {
             if (err) res.status(402).send(err);
 
@@ -48,9 +47,7 @@ app.prepare().then(() => {
         } = req.params;
 
         const movieIndex = moviesData.findIndex(m => m.id === id);
-
         moviesData.splice(movieIndex, 1);
-
         const pathToFile = path.join(__dirname, filePath);
         const stringifiedData = JSON.stringify(moviesData, null, 2);
         fs.writeFile(pathToFile, stringifiedData, err => {

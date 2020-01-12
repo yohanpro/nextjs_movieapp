@@ -18,7 +18,6 @@ export default async (req, res) => {
             const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
             const posts = response.data;
             let slice = posts.slice(0, 20);
-            console.log(slice);
             return res.status(200).json(posts.slice(0, 20));
             break;
         default:

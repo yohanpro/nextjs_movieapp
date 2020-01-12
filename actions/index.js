@@ -60,3 +60,7 @@ export const deleteMovie = id => {
 export const updateMovie = (movie) => {
   return axios.patch(`${BASE_URL}/api/v1/movies/${movie.id}`, movie).then(res => res.data);
 };
+
+export const getPosts = (id) => {
+  return axios.get(`${BASE_URL}/api/v1/posts`).then(res => res.data);
+};
